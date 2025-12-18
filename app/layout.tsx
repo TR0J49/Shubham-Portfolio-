@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Shubham Rahangdale" }],
   creator: "Shubham Rahangdale",
+  icons: {
+    icon: "/circle-cropped.png",
+    shortcut: "/circle-cropped.png",
+    apple: "/circle-cropped.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
