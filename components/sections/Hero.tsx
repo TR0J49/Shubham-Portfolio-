@@ -2,18 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ChevronDown, Download } from 'lucide-react';
-import dynamic from 'next/dynamic';
 import { useState, useEffect } from 'react';
 import TypeWriter from '@/components/ui/TypeWriter';
 import GlitchText from '@/components/ui/GlitchText';
 import { personalInfo } from '@/lib/data';
 
-const Scene = dynamic(() => import('@/components/3d/Scene'), {
-  ssr: false,
-  loading: () => (
-    <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/5 to-[var(--secondary)]/5" />
-  )
-});
 
 interface Particle {
   id: number;
@@ -90,9 +83,6 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* 3D Background */}
-      <Scene className="opacity-70" />
-
       {/* Animated Gradient Orbs */}
       <GradientOrb
         className="w-96 h-96 bg-[var(--primary)] -top-20 -left-20 opacity-20"
