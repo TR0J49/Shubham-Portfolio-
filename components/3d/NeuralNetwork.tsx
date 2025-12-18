@@ -243,9 +243,7 @@ export default function NeuralNetwork() {
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            count={connections.length * 2}
-            array={lineGeometry}
-            itemSize={3}
+            args={[lineGeometry, 3]}
           />
         </bufferGeometry>
         <lineBasicMaterial
