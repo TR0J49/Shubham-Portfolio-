@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FileText, Award, Trophy, Users, Github, ExternalLink } from 'lucide-react';
+import { FileText, Award, Trophy, Users, Github, ScrollText, Image, BookOpen, CheckCircle2, Sparkles } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import GlowCard from '@/components/ui/GlowCard';
 import { publications, achievements } from '@/lib/data';
@@ -42,37 +42,126 @@ export default function Publications() {
             </h4>
 
             {publications.map((pub, index) => (
-              <GlowCard key={index} className="mb-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-[var(--primary)]/20 shrink-0">
-                    <FileText className="text-[var(--primary)]" size={24} />
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-[var(--foreground)] mb-2">
-                      {pub.title}
-                    </h5>
-                    <div className="space-y-1 text-sm">
-                      <p className="text-[var(--secondary)]">
-                        {pub.type}: {pub.registrationNo}
-                      </p>
-                      <p className="text-[var(--muted)]">{pub.event}</p>
+              <motion.div
+                key={index}
+                className="relative p-6 rounded-2xl border-2 border-[var(--primary)]/50 bg-gradient-to-br from-[var(--primary)]/10 via-[var(--card)] to-[var(--secondary)]/10 overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                {/* Glow effects */}
+                <div className="absolute top-0 left-0 w-40 h-40 bg-[var(--primary)]/20 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 right-0 w-40 h-40 bg-[var(--secondary)]/20 rounded-full blur-3xl" />
+
+                {/* Featured Badge */}
+                <div className="absolute top-4 right-4">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-black">
+                    <Sparkles size={12} />
+                    COPYRIGHT REGISTERED
+                  </span>
+                </div>
+
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="p-3 rounded-xl bg-gradient-to-br from-[var(--primary)]/30 to-[var(--secondary)]/30 shrink-0">
+                      <FileText className="text-[var(--primary)]" size={28} />
                     </div>
+                    <div className="flex-1">
+                      <h5 className="text-lg font-bold text-[var(--foreground)] mb-1 pr-32">
+                        {pub.title}
+                      </h5>
+                      <div className="flex flex-wrap items-center gap-2 text-sm">
+                        <span className="px-2 py-1 rounded-md bg-amber-500/20 text-amber-400 font-semibold">
+                          {pub.type}: {pub.registrationNo}
+                        </span>
+                      </div>
+                      <p className="text-[var(--muted)] text-sm mt-2">{pub.event}</p>
+                    </div>
+                  </div>
+
+                  {/* Highlights */}
+                  {pub.highlights && (
+                    <div className="mb-5 p-4 rounded-xl bg-[var(--card)]/80 border border-[var(--border)]">
+                      <h6 className="text-sm font-semibold text-[var(--primary)] mb-3 flex items-center gap-2">
+                        <CheckCircle2 size={16} />
+                        Key Highlights
+                      </h6>
+                      <ul className="space-y-2">
+                        {pub.highlights.map((highlight: string, hIndex: number) => (
+                          <motion.li
+                            key={hIndex}
+                            className="flex items-start gap-2 text-sm text-[var(--muted)]"
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: hIndex * 0.1 }}
+                          >
+                            <span className="text-[var(--primary)] mt-0.5">▹</span>
+                            <span>{highlight}</span>
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-wrap gap-3">
                     {pub.github && (
                       <motion.a
                         href={pub.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 mt-3 text-sm text-[var(--primary)] hover:underline"
-                        whileHover={{ x: 5 }}
+                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-[var(--card-hover)] text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--primary)] transition-all"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                       >
-                        <Github size={14} />
-                        View on GitHub
-                        <ExternalLink size={12} />
+                        <Github size={16} />
+                        GitHub
+                      </motion.a>
+                    )}
+                    {pub.certificate && (
+                      <motion.a
+                        href={pub.certificate}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-amber-500 to-yellow-500 text-black hover:from-amber-400 hover:to-yellow-400 transition-all shadow-lg shadow-amber-500/25"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <ScrollText size={16} />
+                        Certificate
+                      </motion.a>
+                    )}
+                    {pub.poster && (
+                      <motion.a
+                        href={pub.poster}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-[var(--primary)] to-cyan-400 text-black hover:from-cyan-300 hover:to-cyan-400 transition-all shadow-lg shadow-cyan-500/25"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Image size={16} />
+                        Poster
+                      </motion.a>
+                    )}
+                    {pub.researchPaper && (
+                      <motion.a
+                        href={pub.researchPaper}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-[var(--secondary)] to-purple-400 text-white hover:from-purple-400 hover:to-purple-500 transition-all shadow-lg shadow-purple-500/25"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <BookOpen size={16} />
+                        Research Paper
                       </motion.a>
                     )}
                   </div>
                 </div>
-              </GlowCard>
+              </motion.div>
             ))}
           </AnimatedSection>
 

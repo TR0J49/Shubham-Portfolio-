@@ -120,9 +120,28 @@ export default function Projects() {
                 )}
 
                 {/* Project Description */}
-                <p className="text-[var(--muted)] text-sm leading-relaxed mb-6">
+                <p className="text-[var(--muted)] text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
+
+                {/* Project Highlights */}
+                {project.highlights && (
+                  <ul className="space-y-2 mb-4">
+                    {project.highlights.map((highlight: string, hIndex: number) => (
+                      <motion.li
+                        key={hIndex}
+                        className="flex items-start gap-2 text-sm text-[var(--muted)]"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: hIndex * 0.1 }}
+                      >
+                        <span className="text-[var(--primary)] mt-0.5">▹</span>
+                        <span>{highlight}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                )}
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-[var(--border)]">

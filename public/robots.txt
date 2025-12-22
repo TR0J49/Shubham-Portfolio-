@@ -1,0 +1,20 @@
+# Robots.txt for Shubham Rahangdale Portfolio
+# https://shubham-rahangdale.vercel.app
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://shubham-rahangdale.vercel.app/sitemap.xml
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay for respectful crawling
+User-agent: *
+Crawl-delay: 1

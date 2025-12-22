@@ -1,0 +1,27 @@
+{
+  "name": "Shubham Rahangdale - AI Engineer Portfolio",
+  "short_name": "Shubham AI",
+  "description": "AI/ML Engineer specializing in Generative AI, RAG Systems, LangChain, FastAPI. Building intelligent applications for Banking, Healthcare & Agriculture.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#00ffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/circle-cropped.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/circle-cropped.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "technology", "artificial intelligence"],
+  "lang": "en",
+  "dir": "ltr"
+}

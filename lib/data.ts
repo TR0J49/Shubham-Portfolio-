@@ -76,10 +76,23 @@ export const skills = {
 
 export const experiences = [
   {
+    title: "Data Analytics Lead",
+    company: "Google Developer Group (GDG) On Campus",
+    location: "Bhopal",
+    period: "GDG Bhopal",
+    highlights: [
+      "Led data analytics initiatives and promoted Google technologies across campus",
+      "Successfully organized major tech events including DevFest and Bhopal ML Day",
+      "Mentored 20+ students in data analytics, machine learning, and Google technologies",
+      "Built a strong tech community fostering learning and collaboration"
+    ],
+    tech: ["Data Analytics", "Event Management", "Mentorship", "Google Technologies", "Community Building"]
+  },
+  {
     title: "AI Intern",
     company: "Inventohack Innovations Pvt. Ltd.",
     location: "Bhopal",
-    period: "Recent",
+    period: "Accomplished",
     highlights: [
       "Built GreenScan, an AI-based fruit freshness detection system using Gemini API and USDA nutrition datasets",
       "Developed a health-focused food recommendation engine using user profile and dietary constraints",
@@ -122,10 +135,15 @@ export const projects = [
   },
   {
     title: "AI-Powered Smart Bank API Search System",
-    description: "Generative AI-powered Banking API Assistant for ICICI Bank with multilingual, session-aware conversational search capabilities.",
+    description: "Generative AI-powered Banking API Assistant developed for ICICI Bank. Features multilingual, session-aware conversational search for UPI and banking APIs with intelligent query understanding and context retention.",
     tech: ["FastAPI", "FAISS", "ChromaDB", "RAG", "Ollama"],
     github: "https://github.com/TR0J49",
-    featured: true
+    featured: true,
+    highlights: [
+      "Built RAG-based conversational AI using FAISS & ChromaDB for semantic API search",
+      "Enabled multilingual support with session-aware context for banking queries",
+      "Developed production-ready FastAPI backend with Ollama LLM integration"
+    ]
   },
   {
     title: "GreenScan - Fruit Freshness Detection",
@@ -168,7 +186,16 @@ export const publications = [
     type: "Code Copyright",
     registrationNo: "L-157174/2024",
     event: "Presented at Anusandhan 2.0 – International Innovation and Research Fair, IIT Mandi",
-    github: "https://github.com/TR0J49"
+    github: "https://github.com/TR0J49",
+    certificate: "/Project_Copyright_Certificate.pdf",
+    poster: "/Heart_Disease_Poster.jpg",
+    researchPaper: "/Cardio_Research_Paper.pdf",
+    highlights: [
+      "Developed predictive models using Random Forest, SVM, KNN & Linear Regression for early cardiovascular disease detection",
+      "Processed patient datasets comprising age, gender, blood pressure, cholesterol levels & smoking habits for risk analysis",
+      "Implemented real-time patient monitoring system with GSM-based instant doctor notification on critical threshold breaches",
+      "Designed comparative ML framework analyzing model performance with GridSearchCV optimization techniques"
+    ]
   }
 ];
 
