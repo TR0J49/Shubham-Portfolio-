@@ -98,19 +98,17 @@ export const experiences = [
       "Built production-ready AI search system"
     ],
     tech: ["FastAPI", "FAISS", "ChromaDB", "RAG", "Ollama"],
-    github: "https://github.com/TR0J49"
-  },
-  {
-    title: "Data Engineering & Web Scraping",
-    company: "protean.gov (Ghana Client)",
-    location: "Remote",
-    period: "Government Project",
-    highlights: [
-      "Worked on a government-associated project via protean.gov for an international client in Ghana",
-      "Built automated e-commerce data extraction pipelines using Selenium, Playwright, Beautiful Soup, and Ollama LLM",
-      "Developed FastAPI-based REST services and lightweight web dashboards for data validation and analytics"
-    ],
-    tech: ["Selenium", "Playwright", "Beautiful Soup", "FastAPI", "Ollama LLM", "HTML", "CSS", "JavaScript"]
+    github: "https://github.com/TR0J49",
+    governmentProject: {
+      title: "Government Project - protean.gov",
+      client: "Ghana International Client",
+      highlights: [
+        "Worked on a government-associated project via protean.gov for an international client in Ghana",
+        "Built automated e-commerce data extraction pipelines using Selenium, Playwright, Beautiful Soup, and Ollama LLM",
+        "Developed FastAPI-based REST services and lightweight web dashboards for data validation and analytics"
+      ],
+      tech: ["Selenium", "Playwright", "Beautiful Soup", "FastAPI", "Ollama LLM", "HTML", "CSS", "JavaScript"]
+    }
   }
 ];
 

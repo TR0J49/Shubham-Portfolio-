@@ -1,9 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Briefcase, MapPin, ExternalLink } from 'lucide-react';
+import { Briefcase, MapPin, ExternalLink, Building2, Globe } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import { experiences } from '@/lib/data';
+
+interface GovernmentProject {
+  title: string;
+  client: string;
+  highlights: string[];
+  tech: string[];
+}
+
+interface Experience {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  highlights: string[];
+  tech: string[];
+  github?: string;
+  governmentProject?: GovernmentProject;
+}
 
 export default function Experience() {
   return (
@@ -117,6 +135,66 @@ export default function Experience() {
                   >
                     View on GitHub <ExternalLink size={14} />
                   </motion.a>
+                )}
+
+                {/* Government Project Highlight */}
+                {(exp as Experience).governmentProject && (
+                  <motion.div
+                    className="mt-6 p-4 rounded-lg border-2 border-amber-500/50 bg-gradient-to-br from-amber-500/10 to-yellow-500/5 relative overflow-hidden"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    {/* Glow effect */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/20 rounded-full blur-3xl" />
+
+                    {/* Header */}
+                    <div className="flex items-center gap-2 mb-3">
+                      <Building2 className="text-amber-400" size={20} />
+                      <span className="text-sm font-bold text-amber-400">
+                        {(exp as Experience).governmentProject!.title}
+                      </span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                        Featured
+                      </span>
+                    </div>
+
+                    {/* Client */}
+                    <div className="flex items-center gap-2 mb-3 text-sm text-[var(--muted)]">
+                      <Globe size={14} className="text-amber-400" />
+                      <span>Client: <span className="text-[var(--foreground)]">{(exp as Experience).governmentProject!.client}</span></span>
+                    </div>
+
+                    {/* Highlights */}
+                    <ul className="space-y-2 mb-4">
+                      {(exp as Experience).governmentProject!.highlights.map((highlight, hIndex) => (
+                        <motion.li
+                          key={hIndex}
+                          className="flex items-start gap-2 text-sm text-[var(--muted)]"
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.5 + hIndex * 0.1 }}
+                        >
+                          <span className="text-amber-400 mt-1">◆</span>
+                          {highlight}
+                        </motion.li>
+                      ))}
+                    </ul>
+
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2 pt-3 border-t border-amber-500/20">
+                      {(exp as Experience).governmentProject!.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 text-xs rounded bg-amber-500/20 text-amber-400 border border-amber-500/30"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
                 )}
               </motion.div>
             </AnimatedSection>
