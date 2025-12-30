@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Folder, Star } from 'lucide-react';
+import { Github, ExternalLink, Folder, Star, FileText } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import GlowCard from '@/components/ui/GlowCard';
 import { projects } from '@/lib/data';
@@ -46,6 +46,36 @@ export default function Projects() {
                     <Star className="text-yellow-500" size={16} />
                   </div>
                   <div className="flex items-center gap-3">
+                    {project.researchPaper && (
+                      <motion.a
+                        href={project.researchPaper}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg overflow-hidden group"
+                        whileHover={{ scale: 1.08, y: -3 }}
+                        whileTap={{ scale: 0.95 }}
+                        title="View Research Paper"
+                      >
+                        {/* Animated gradient background */}
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-[var(--secondary)] via-[var(--primary)] to-[var(--secondary)] opacity-90"
+                          animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                          style={{ backgroundSize: "200% 200%" }}
+                        />
+                        {/* Shine effect */}
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12"
+                          animate={{ x: ["-100%", "200%"] }}
+                          transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                        />
+                        {/* Ping effect */}
+                        <span className="absolute inset-0 rounded-lg animate-ping bg-[var(--secondary)]/30" style={{ animationDuration: "2s" }} />
+                        {/* Content */}
+                        <FileText size={16} className="relative z-10 text-white" />
+                        <span className="relative z-10 text-xs font-bold text-white tracking-wide">Research Paper</span>
+                      </motion.a>
+                    )}
                     {project.github && (
                       <motion.a
                         href={project.github}

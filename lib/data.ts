@@ -127,10 +127,29 @@ export const experiences = [
 
 export const projects = [
   {
+    title: "Laplacian AI - Sovereign Enterprise AI Workspace",
+    description: "On-premise enterprise AI workspace enabling secure conversational intelligence, document analysis, and data analytics with complete data localization. Leverages locally deployed LLMs and RAG techniques to comply with Indian data protection regulations.",
+    tech: ["Flask", "Ollama", "GPT-OSS", "Phi-3", "Qwen-Coder", "RAG", "MongoDB", "Chart.js", "Mermaid.js", "TLS Security"],
+    stats: { deployment: "On-Prem", compliance: "Indian DPR", security: "TLS-based" },
+    researchPaper: "/Laplacian Research Paper.pdf",
+    highlights: [
+      "Built sovereign AI workspace with complete data localization for enterprise security requirements",
+      "Integrated multiple local LLMs (GPT-OSS, Phi-3, Qwen-Coder) via Ollama for versatile AI capabilities",
+      "Implemented RAG pipeline with MongoDB for intelligent document analysis and retrieval",
+      "Developed interactive data analytics dashboards using Chart.js and Mermaid.js visualizations"
+    ],
+    featured: true
+  },
+  {
     title: "Covexis AI - Banking AI Finance Assistant",
     description: "Enterprise AI platform unifying Smart AI Chat, DocIQ (RAG-powered document intelligence), VizIQ (no-code analytics & dashboards), Smart Tasks (AI-powered task management), and Reminders. Built on cutting-edge LLM and RAG technology with 6+ AI modules for maximum productivity.",
     tech: ["LLM", "RAG", "AI Chat", "Document Intelligence", "Data Visualization", "Task Automation"],
     stats: { modules: "6+", privacy: "100% Private", performance: "10x" },
+    highlights: [
+      "Built DocIQ module with RAG-powered document intelligence for semantic search and contextual Q&A over enterprise documents",
+      "Developed VizIQ for no-code data analytics with interactive dashboards and automated insight generation",
+      "Integrated Smart AI Chat with task automation, reminders, and 100% private on-device LLM processing"
+    ],
     featured: true
   },
   {
@@ -149,6 +168,11 @@ export const projects = [
     title: "GreenScan - Fruit Freshness Detection",
     description: "AI-based fruit freshness detection system using Gemini API and USDA nutrition datasets with real-time image analysis.",
     tech: ["Gemini API", "Flask", "Python", "Computer Vision"],
+    highlights: [
+      "Built AI-powered freshness detection using Gemini API for real-time image analysis and quality assessment",
+      "Integrated USDA nutrition datasets for comprehensive nutritional information and health-focused recommendations",
+      "Developed Flask backend with Android WebView integration for seamless mobile fruit scanning experience"
+    ],
     featured: true
   },
   {
