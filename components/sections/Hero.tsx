@@ -227,8 +227,8 @@ export default function Hero() {
             View Projects
           </motion.a>
           <motion.a
-            href="/Shubham_Rahangdale_Resume.pdf"
-            download="Shubham_Rahangdale_Resume.pdf"
+            href="/@Shubham_Rahangdale.rsm.pdf"
+            download="@Shubham_Rahangdale.rsm.pdf"
             className="px-6 py-3 rounded-lg border-2 border-[var(--secondary)] text-[var(--secondary)] font-semibold transition-all hover:bg-[var(--secondary)] hover:text-[var(--background)] hover:shadow-[0_0_20px_var(--glow-secondary)]"
             whileHover={{
               scale: 1.05,
