@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { MapPin, GraduationCap, Briefcase, Award, Code2 } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import GlowCard from '@/components/ui/GlowCard';
+import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import { personalInfo, education } from '@/lib/data';
 
 const stats = [
@@ -140,7 +141,9 @@ export default function About() {
                     whileHover={{ scale: 1.05 }}
                   >
                     <stat.icon className="w-6 h-6 mx-auto mb-2 text-[var(--primary)]" />
-                    <p className="text-2xl font-bold gradient-text">{stat.value}</p>
+                    <p className="text-2xl font-bold gradient-text">
+                      <AnimatedCounter value={stat.value} duration={2} />
+                    </p>
                     <p className="text-xs text-[var(--muted)]">{stat.label}</p>
                   </motion.div>
                 </AnimatedSection>

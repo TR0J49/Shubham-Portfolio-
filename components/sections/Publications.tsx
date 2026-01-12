@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FileText, Award, Trophy, Users, Github, ScrollText, Image, BookOpen, CheckCircle2, Sparkles } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import GlowCard from '@/components/ui/GlowCard';
+import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import { publications, achievements } from '@/lib/data';
 
 const achievementIcons: Record<string, typeof Trophy> = {
@@ -216,9 +217,9 @@ export default function Publications() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { label: 'Copyright', value: '1', icon: FileText },
-              { label: 'Hackathons', value: '3+', icon: Trophy },
-              { label: 'National Competitions', value: '2+', icon: Award },
-              { label: 'Leadership Roles', value: '1', icon: Users }
+              { label: 'Hackathons', value: '8+', icon: Trophy },
+              { label: 'National Competitions', value: '5+', icon: Award },
+              { label: 'Leadership Roles', value: '6', icon: Users }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -230,7 +231,9 @@ export default function Publications() {
                 whileHover={{ scale: 1.05 }}
               >
                 <stat.icon className="w-8 h-8 mx-auto mb-3 text-[var(--primary)]" />
-                <p className="text-3xl font-bold gradient-text">{stat.value}</p>
+                <p className="text-3xl font-bold gradient-text">
+                  <AnimatedCounter value={stat.value} duration={2} />
+                </p>
                 <p className="text-sm text-[var(--muted)]">{stat.label}</p>
               </motion.div>
             ))}

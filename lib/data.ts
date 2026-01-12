@@ -127,6 +127,19 @@ export const experiences = [
 
 export const projects = [
   {
+    title: "Active Surf Tracker - AI-Powered Website Time Tracking Extension",
+    description: "An advanced, AI-powered browser extension designed to help users understand and optimize their online browsing habits. Leverages cutting-edge artificial intelligence to provide real-time tracking, intelligent categorization, and personalized productivity insights—all while maintaining complete user privacy.",
+    tech: ["AI/ML", "Browser Extension", "JavaScript", "Privacy-First", "Real-Time Analytics"],
+    stats: { features: "4+", type: "Productivity", privacy: "100% Private" },
+    highlights: [
+      "Automatic Activity-Based Tracking for seamless monitoring of browsing patterns without manual input",
+      "Intelligent Website Categorization using AI to automatically classify websites by content type and purpose",
+      "AI-Powered Insights Engine providing personalized productivity recommendations and habit analysis",
+      "Real-Time Productivity Scoring with instant feedback on browsing efficiency and focus metrics"
+    ],
+    featured: true
+  },
+  {
     title: "Laplacian AI - Sovereign Enterprise AI Workspace",
     description: "On-premise enterprise AI workspace enabling secure conversational intelligence, document analysis, and data analytics with complete data localization. Leverages locally deployed LLMs and RAG techniques to comply with Indian data protection regulations.",
     tech: ["Flask", "Ollama", "GPT-OSS", "Phi-3", "Qwen-Coder", "RAG", "MongoDB", "Chart.js", "Mermaid.js", "TLS Security"],
@@ -180,6 +193,11 @@ export const projects = [
     description: "Machine Learning model for prediction of cardiovascular diseases. Presented at Anusandhan 2.0 - International Innovation and Research Fair, IIT Mandi.",
     tech: ["Deep Learning", "Python", "Scikit-learn", "TensorFlow"],
     github: "https://github.com/TR0J49",
+    highlights: [
+      "Developed predictive ML models using Random Forest, SVM, KNN & Neural Networks achieving high accuracy in early cardiovascular disease detection",
+      "Implemented real-time patient monitoring system with GSM-based instant alerts to doctors when critical health thresholds are breached",
+      "Presented research at Anusandhan 2.0 - International Innovation and Research Fair at IIT Mandi with Code Copyright (L-157174/2024)"
+    ],
     featured: true
   },
   {

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Code2, Database, Brain, Globe, Wrench, BarChart } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import { skills } from '@/lib/data';
 
 const skillCategories = [
@@ -74,7 +75,7 @@ export default function Skills() {
                             {skill.name}
                           </span>
                           <span className="text-sm text-[var(--muted)]">
-                            {skill.level}%
+                            <AnimatedCounter value={`${skill.level}%`} duration={1.5} />
                           </span>
                         </div>
                         <div className="h-2 bg-[var(--border)] rounded-full overflow-hidden">
